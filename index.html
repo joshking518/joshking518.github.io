@@ -32,6 +32,10 @@
         color: white;
       }
 
+      .italics {
+        font-family: Inter;
+      }
+
       .QTitle {
         font-size: 60px;
         margin-bottom: 100px;
@@ -78,6 +82,20 @@
         color: Black;
       }
 
+      .contactButton {
+        margin-top: 50px;
+        padding: 20px;
+        padding-left: 60px;
+        padding-right: 60px;
+        font-size: 20px;
+        margin-right: 10px;
+        background-color: #FF9D76;
+        color: Black;
+        border: none;
+        border-radius: 100px;
+
+      }
+
     </style>
     <meta charset="utf-8">
     <title></title>
@@ -86,12 +104,13 @@
 
     <div id="scoreCard" class="scoreCard hide">
       <h1 id="scoreTitle" class="ScoreHeading">
-        Your Score:
+        Your Simulated Risk Vetting Score:
       </h1>
       <p id="score" class="ScoreNumber"></p>
 
       <!-- The explanation of the score goes below here -->
       <p id="Explanation" class="scoreEx"></p>
+      <button id="contactButton" class="contactButton" type="button" onclick="location.href='https://www.activefoodsafety.com/contact-us'">Schedule a Call</button>
     </div>
 
     <!-- Question 1 -->
@@ -111,7 +130,7 @@
       <h1 id="QuestionTitle" class="QTitle">Question 2</h1>
       <p id="QuestionText" class="QText">
 
-        Have you had any FDA Warning Letters (Form 483) in the last 12 months from any facility you manufacture human food in (e.g., presence of Listeria monocytogenes in the manufacturing environment or unsanitary conditions cited)?
+        Have you had any FDA Warning Letters (Form 483) in the last 12 months from any facility you manufacture human food in (e.g., presence of <i class="italics">Listeria monocytogenes</i> in the manufacturing environment or unsanitary conditions cited)?
 
       </p>
       <button id="Question2YES" type="button">Yes</button>
@@ -156,6 +175,8 @@
 
 
     <script>
+
+
       //Initial Score
       var score = 100;
       document.getElementById("score").innerHTML = score;
